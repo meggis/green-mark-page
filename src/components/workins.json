@@ -1,0 +1,5 @@
+{
+  "1": {"location": "seattle", "color": "red"},
+  "2": {"location": "irvine", "color": "blue"},
+  "3": {"location": "san diego", "color": "green"}
+}

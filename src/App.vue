@@ -1,32 +1,88 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <nav class="nav justify-content-center sticky-top">        
+      <router-link to="/" class="nav-link">Home</router-link>
+      <router-link to="/about" class="nav-link">About</router-link>
+      <router-link to="/work" class="nav-link">Work</router-link>
+      <router-link to="/contact" class="nav-link">Contact</router-link>
+    </nav>
+    <div class="main-wrapper">
+      <router-view class="main-content"/>
+      <Footer />
     </div>
-    <router-view/>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import Footer from "./shared/Footer"
+
+export default {
+  components: {
+    Footer
+  },
+  data() {
+    return {
+      title: "asdasdsada"
+    }
+  }
+}
+</script>
+
+<style lang="scss">
+@import './scss/colors.scss';
+
+
+.nav {
+  padding: 10px;
+  background: black;
+
+  a {
+    font-size: 1em;
+    text-decoration: none;
+    background-color: transparent;
+    border-bottom: .25rem solid transparent;
+    margin: auto 5px;
+    cursor: pointer;
+    color: #c0c0c0;
+   
+    &:hover {
+     border-bottom-color: $green;
+     color:#c0c0c0;
+    }
+    &:focus {
+      border-bottom-color: $green;
+      color:#c0c0c0;
+    }
+  }
 }
 
-#nav {
-  padding: 30px;
+@media (max-width: 380px) {
+  .nav {
+    display: block;
+  }
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.main-wrapper {
+  background-color: #333333;
+  position: relative;
+  min-height: calc(100vh - 64px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.main-content {
+  padding-bottom: 134px;
 }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 134px;
+  width: 100%;
+  // z-index: 100;
+  // background-color: #333333;
+  // box-shadow: 0px -1px 21px -8px #909090;
+}
+
 </style>
