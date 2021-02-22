@@ -1,7 +1,7 @@
 <template>
   <footer class="footer text-center py-3" style="color:grey">
     <div class="container">
-      <hr class="md-4 my-3 myBorder">
+      <hr class="md-4 my-3 my-border">
       <b-button @click="handleClick(item.id)">
         {{ newValue }}
       </b-button>

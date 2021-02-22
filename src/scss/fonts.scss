@@ -1,0 +1,50 @@
+h1, .my-text {
+    color: $green;  
+}
+
+
+
+@media only screen and (max-width: 600px) { 
+    html {
+        h1 {font-size: 30px;}
+        h2 {font-size: 20px;}
+    }
+    .my-text {
+        font-size: 15px;
+    }
+};
+@media only screen and (min-width: 600px){     
+    html {
+        h1 {font-size: 30px;}
+        h2 {font-size: 20px;}
+    }
+    .my-text {
+        font-size: 18px;
+    }
+};
+@media only screen and (min-width: 768px){     
+    html {
+        h1 {font-size: 40px;}
+        h2 {font-size: 20px;}
+    }
+    .my-text {
+        font-size: 18px;
+    }
+};
+@media only screen and (min-width: 992px){     
+    html {
+        h1 {font-size: 40px;}
+        h2 {font-size: 20px;}
+    }
+    .my-text {
+        font-size: 20px;
+    }
+};
+
+.my-border {
+    border-style: solid;
+    border-width: thin;
+    border-color: gray;
+    border-radius: 5px;
+}
+

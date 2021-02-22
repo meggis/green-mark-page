@@ -30,6 +30,7 @@ export default {
 
 <style lang="scss">
 @import './scss/colors.scss';
+@import './scss/fonts.scss';
 
 
 .nav {
@@ -49,6 +50,7 @@ export default {
      border-bottom-color: $green;
      color:#c0c0c0;
     }
+    
     &:focus {
       border-bottom-color: $green;
       color:#c0c0c0;
@@ -56,9 +58,12 @@ export default {
   }
 }
 
-@media (max-width: 380px) {
+
+@media (max-width: 373px) {
   .nav {
-    display: block;
+    flex-direction: column;
+    text-align: center;
+    position: absolute;
   }
 }
 
