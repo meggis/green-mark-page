@@ -10,7 +10,6 @@
 
     <b-container class="mt-5">
       <b-row align-h="center" cols="1" cols-sm="1" cols-md="4" cols-lg="4" cols-xl="4" class="mx-2">
-        <!-- cols="2" sm="3" md="4" lg="3" xl="3" -->
         <b-col class="my-border p-2">
           <b-img center :src="require('../assets/check2-circle.svg')" class="my-img" alt=""></b-img>
           <h2 class="my-title">> 20 done garden projects</h2>
@@ -39,6 +38,7 @@
         <b-button class="myBtn" size="md" @click="handleClick">My work</b-button>
       </b-row>
     </b-container>
+    
 
 </div>
 </template>

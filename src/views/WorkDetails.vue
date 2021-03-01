@@ -10,25 +10,11 @@
               <div v-for="(photo, index) in workItem.photos" :key="index">
                 <b-img fluid alt="Responsive image" :src="require(`../assets/${photo}`)"></b-img>
               </div>
-            <b-container class="md-4">
-            </b-container>
           </b-card>
         </b-card-group>
-    <!-- <b-row align-v="center">
-      <b-col align-self="center" class="detailsContainer">
-        <b-card-group v-if="!workItem && error">
-          <b-card class="my">
-            <b-card-text class="my-5">
-              <h1>404</h1>
-              <h4>page not found</h4>
-            </b-card-text>
-            <div>
-              <b-button @click="detailClick()">Go to the front page</b-button>
-            </div>
-          </b-card>
-        </b-card-group>
-      </b-col>
-    </b-row> -->
+        <div>
+          <b-button @click="anotherProjects()" class="myBtn mt-3" size="lg">Go back to another projects</b-button>
+        </div>
   </b-container>
 </template>
 
@@ -57,9 +43,9 @@ export default {
         this.error = true;
       }
     },
-    detailClick() {
-      this.$router.push("../");
-    },
+    anotherProjects() {
+      this.$router.push("../Work")
+    }
   },
 };
 

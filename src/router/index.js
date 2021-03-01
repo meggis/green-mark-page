@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Work from '../views/Work.vue'
 import Contact from '../views/Contact.vue'
 import WorkDetails from '../views/WorkDetails.vue'
+import NotFound from '../views/404.vue'
 
 Vue.use(VueRouter)
 
@@ -32,6 +33,11 @@ const routes = [
   {
     path: '/work-details/:id',
     component: WorkDetails
+  },
+  {
+    path: '*', 
+    name: 'NotFound',
+    component: NotFound
   }
 ]
 
