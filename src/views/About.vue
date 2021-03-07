@@ -1,11 +1,11 @@
 <template>
   <b-container class="mt-5">
     <b-row>
-      <b-col align-h="center" class="text-center pb-3">
+      <b-col align-self="center" class="text-center pb-3">
         <h1>Hello, I'm Magdalena</h1>
       </b-col>
     </b-row>
-      <b-row align-h="center" align-v="center" class="mx-2 about">
+      <b-row align-self="center" align-v="center" class="mx-2 about">
         <b-col>
           <b-img center class="col-xl-7 col-lg-7 col-md-10 col-sm-8" :src="require('../assets/photo.png')"></b-img>
         </b-col>

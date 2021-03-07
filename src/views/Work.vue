@@ -1,11 +1,16 @@
 <template>
 <div>
-  <div v-for="(item, index) in workList" :key="index" class="my-hover col-xl-6 col-lg-8 col-md-8 col-sm-8 mx-auto">
-        <b-card-group @click="handleClick(index)" class="mt-5 wrapper">
-        <b-card no-body class="" :img-src="require(`../assets/${item.bgImage}`)" alt="Work image" text-variant="transparent" bg-variant="transparent" border-variant="0"> 
-          <b-card-text class="my-border text-center py-3 my-text">{{ item.title }}</b-card-text>
-          </b-card>
-        </b-card-group>
+  <div v-for="(item, index) in workList" :key="index" class="mx-auto">
+    <b-container>
+      <b-row @click="handleClick(index)" class="my-5">
+        <b-col class="hover-work px-0">
+          <b-img class="image-work img-fluid" :src="require(`../assets/${item.bgImage}`)" alt="Work image"></b-img>
+          <div class="overlay-work">
+            <p class="text-work">{{ item.title }}</p>
+          </div>
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </div>
 
@@ -31,30 +36,51 @@ export default {
 
 
 <style lang="scss" scoped> 
+@import '../scss/colors.scss';
 
-
-.my-hover:hover {
+.image-work {
   cursor: pointer;
-  opacity: 0.6;
-  border-radius: 5px;
-  text-decoration: black;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+
+
+  &:hover {
+    filter: gray;
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
   }
-
-.my-hover{
-    position: relative;
-  width: 50%;
 }
 
-.wrapper{
-    display: block;
-  width: 100%;
-  height: auto;
+.overlay-work {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
 }
 
-.my-border {
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
+.hover-work:hover .image-work {
+  opacity: 0.6;
 }
+
+.hover-work:hover .overlay-work {
+  opacity: 1;
+}
+
+.text-work {
+  background-color: $green;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+  font-weight: bold;
+}
+
+
 
 
 </style>

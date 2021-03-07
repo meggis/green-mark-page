@@ -27,6 +27,14 @@ const DATA = {
       "p3w1.jpg"
       ]
     },
+  },
+  i18: {
+    PL: {
+      title: 'asdsa'
+    },
+    EN: {
+      title: ''
+    }
   }
 }
 

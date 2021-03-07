@@ -5,6 +5,7 @@ import Work from '../views/Work.vue'
 import Contact from '../views/Contact.vue'
 import WorkDetails from '../views/WorkDetails.vue'
 import NotFound from '../views/404.vue'
+import Projects from '../views/Projects.vue'
 
 Vue.use(VueRouter)
 
@@ -18,7 +19,7 @@ const routes = [
   {
     path: '/about',
     name: 'About',
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import('../views/About.vue')
   },
   {
     path: '/work',
@@ -38,7 +39,11 @@ const routes = [
     path: '*', 
     name: 'NotFound',
     component: NotFound
-  }
+  },
+  {
+    path: '/projects',
+    component: Projects
+  },
 ]
 
 const router = new VueRouter({
