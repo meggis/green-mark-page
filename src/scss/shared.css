@@ -1,20 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;700&display=swap');
+@import '../scss/colors.scss';
 
 * {
   font-family: 'Raleway', sans-serif;
 }
 
-
-body {
-  min-height:100%; 
-  position:relative; 
-  padding-bottom: 60px;
-  font-family: 'Raleway', sans-serif;
-  
-
-/* padding-top: 112px; */
+html {
+  height: 100%;
 }
 
-.background {
-  background-color: #f2f2f2;
+.title {
+  font-size: 2em;
+  color: black;
+}
+
+.background-grey {
+  background-color: rgb(243, 243, 243);
+}
+
+@media (max-width: 768px) {
+  .mobile-view {
+    text-align: center;
+  }
 }

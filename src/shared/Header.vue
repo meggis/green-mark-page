@@ -3,7 +3,7 @@
     <b-container>
       <b-navbar class="px-0" toggleable="lg" type="dark" variant="black">
         <b-navbar-brand href="/">
-          <img class="logo" src="../assets/logo3.png" alt="#">
+          <img class="logo" src="../assets/logo.png" alt="#">
         </b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -12,7 +12,7 @@
         <b-navbar-nav class="ml-auto">
           <b-link to="/about" class="link">O MNIE</b-link>
           <b-link to="/work" class="link">ZREALIZOWANE PROJEKTY</b-link>
-          <b-link to="/projects" class="link">ZAWARTOŚĆ PROJEKTU</b-link>
+          <b-link to="/offer" class="link">OFERTA</b-link>
           <b-link to="/contact" class="link">KONTAKT</b-link>
         </b-navbar-nav>
       </b-collapse>
@@ -32,7 +32,6 @@
   color: $green;
   font-weight: bold;
 } 
-
 
 .header {
   background-color: black;

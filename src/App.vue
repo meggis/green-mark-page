@@ -1,26 +1,50 @@
 <template>
-  <div >
+  <div class="page-container">
     <Header />
-    <router-view />
-    <Footer />
+    <div class="content-wrap">
+      <router-view />
+      <div class="footer">
+        <Footer />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import Footer from "./shared/Footer"
-import Header from './shared/Header'
+import Footer from "./shared/Footer";
+import Header from "./shared/Header";
 
 export default {
   components: {
     Footer,
-    Header
+    Header,
   },
   data() {
-    return {
-    }
-  }
-}
+    return {};
+  },
+};
 </script>
 
 <style>
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  padding-bottom: 56px;
+}
+
+@media (max-width: 768px) {
+  .content-wrap {
+    padding-bottom: 104px;
+  }
+} 
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+}
 </style>

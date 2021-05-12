@@ -5,7 +5,7 @@ import Work from '../views/Work.vue'
 import Contact from '../views/Contact.vue'
 import WorkDetails from '../views/WorkDetails.vue'
 import NotFound from '../views/404.vue'
-import Projects from '../views/Projects.vue'
+import Offer from '../views/Offer.vue'
 
 Vue.use(VueRouter)
 
@@ -33,6 +33,7 @@ const routes = [
   },
   {
     path: '/work-details/:id',
+    name:'Work-Details',
     component: WorkDetails
   },
   {
@@ -41,8 +42,9 @@ const routes = [
     component: NotFound
   },
   {
-    path: '/projects',
-    component: Projects
+    path: '/Offer',
+    name: 'Offer',
+    component: Offer
   },
 ]
 

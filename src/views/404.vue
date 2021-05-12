@@ -1,5 +1,5 @@
 <template>
-<b-container>
+<b-container class="mt-5 pt-5">
   <b-row align-h="center">
     <b-col class="text-center">
             <h1>(404) Page NotFound</h1>
@@ -66,9 +66,4 @@ export default {
 </script>
 
 <style <style lang="scss">
-@import '../scss/colors.scss'; 
-
-h2 {
-  color: rgb(190, 190, 190);
-}
 </style> >

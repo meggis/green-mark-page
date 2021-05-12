@@ -1,43 +1,58 @@
 <template>
-<div>
-  <footer class="fixed-bottom">
-    <b-container class="footer">
-            <b-row align-h="around" class="mt-4 pb-0">
-              <p class="p-footer" >
-                <b-icon icon="telephone-fill" scale="1.5" class="icon-color mr-2"></b-icon>
-                +48 691 192 949</p>
-              <p class="p-footer">
-                <b-icon icon="envelope-fill" scale="1.5" class="icon-color mr-2"></b-icon>
-                magdalena.siekanska@gmail.com</p>
-            <p style="color:grey">&copy; 2021 GREEN-MARK Magdalena Siekańska </p>
-            </b-row>
-    </b-container>
-  </footer>
+<div class="footer">
+      <b-container>
+        <b-row class="my-3">
+            <b-col cols="6" md="4">
+              <span class="p-footer">
+                <b-icon
+                  icon="telephone-fill"
+                  scale="1.5"
+                  class="icon-color mr-2"
+                ></b-icon>
+                +48 691 192 949
+              </span>
+            </b-col>
+          <b-col cols="12" md="4">
+              <span class="p-footer">
+                <b-icon
+                  icon="envelope-fill"
+                  scale="1.5"
+                  class="icon-color mr-2"
+                ></b-icon>
+                ogrody.greenmark@gmail.com
+              </span>
+
+          </b-col>
+            <b-col cols="12" md="4">
+            <span class="span-color">&copy; 2021 GREEN-MARK Magdalena Siekańska</span>
+            </b-col>
+        </b-row>
+      </b-container>
+
 </div>
 </template>
 
 <script>
 </script>
 
-<style lang="scss">
-@import '../scss/colors.scss';
-
+<style lang="scss" scoped>
+@import "../scss/colors.scss";
 
 .icon-color {
   color: $green;
 }
-.icons {
-  height: 40px;
-}
-
-footer {
-  position: absolute;
-  left: 0 ; right: 0; bottom: 0; 
-  height: 60px;
-  background-color: black;
-}
 
 .p-footer {
   color: rgb(211, 211, 211);
+}
+
+.span-color {
+  color: gray;
+}
+
+@media (max-width: 768px) {
+  .icon-color {
+    height: 10px;
+  }
 }
 </style>
