@@ -82,7 +82,7 @@ export default {
 
 <style scoped>
 .hover-style:hover {
-  outline: 2px solid rgb(124, 124, 124);
+  outline: 1px solid rgb(124, 124, 124);
   cursor: pointer;
 }
 </style>
