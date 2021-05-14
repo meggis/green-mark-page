@@ -7,14 +7,14 @@
     </div>
     <div v-for="(item, index) in workList" :key="index" class="mx-auto">
       <b-container class="px-4">
-        <b-row @click="handleClick(index)" class="mb-4">
+        <b-row class="mb-4">
           <b-col class="hover-work px-0">
             <b-img
               class="image-work img-fluid mx-auto"
               :src="require(`../assets/${item.bgImage}`)"
               alt="Work image"
             ></b-img>
-            <div class="overlay-work">
+            <div @click="handleClick(index)" class="overlay-work">
               <p class="text-work">{{ item.title }}</p>
             </div>
           </b-col>
@@ -48,17 +48,10 @@ export default {
 @import "../scss/colors.scss";
 
 .image-work {
-  cursor: pointer;
   -webkit-transition: opacity 0.5s ease-in-out;
   -moz-transition: opacity 0.5s ease-in-out;
   -o-transition: opacity 0.5s ease-in-out;
   transition: opacity 0.5s ease-in-out;
-
-  &:hover {
-    filter: gray;
-    -webkit-filter: grayscale(1);
-    filter: grayscale(1);
-  }
 }
 
 .overlay-work {
@@ -73,7 +66,10 @@ export default {
 }
 
 .hover-work:hover .image-work {
-  opacity: 0.6;
+  opacity: 0.9;
+  filter: gray;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
 }
 
 .hover-work:hover .overlay-work {
@@ -82,6 +78,7 @@ export default {
 
 .text-work {
   background-color: $green;
+  cursor: pointer;
   color: white;
   font-size: 16px;
   padding: 16px 32px;
