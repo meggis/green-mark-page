@@ -91,8 +91,7 @@ export default {
 </script>
 
 
-<style lang="scss" scoped>
-@import "../scss/colors.scss";
+<style scoped>
 
 .heading-text {
   font-size: 25px;
