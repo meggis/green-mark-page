@@ -109,8 +109,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-@import "../scss/colors.scss";
-</style>
-
