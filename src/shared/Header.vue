@@ -25,7 +25,7 @@
 <style lang="scss">
 @import '../scss/colors.scss';
 @import '../scss/fonts.scss';
-@import '../scss/shared.css';
+@import '../scss/shared.scss';
 
 
 .green {
