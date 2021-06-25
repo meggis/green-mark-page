@@ -37,7 +37,7 @@ export default {
   },
   methods: {
     handleOkClick() {
-      this.$emit('hideDupa')
+      this.$emit('hideModal')
     }
   },
 }

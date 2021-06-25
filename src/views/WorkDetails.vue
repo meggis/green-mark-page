@@ -2,7 +2,7 @@
   <div>
     <div class="background-grey">
       <div v-if="workItem && workItem.photos.length">
-        <Carousel :show="show" :slide="slide" :photos="workItem.photos" @hideDupa="hideModal" />
+        <Carousel :show="show" :slide="slide" :photos="workItem.photos" @hideModal="hideModal" />
       </div>
       <b-container>
         <b-row align-h="center" align-v="center" class="py-5" v-if="workItem">
@@ -71,7 +71,6 @@ export default {
     clickItem(index) {
       this.show = true
       this.slide = index
-      console.log(this.show)
     },
     hideModal() {
       this.show = false

@@ -31,7 +31,6 @@ export default {
   },
   
   mounted() {
-    console.log('mounted')
     this.startInterval(),
     this.counting()
   },
@@ -48,7 +47,6 @@ export default {
         }, 1000)
     },
     stopInterval() {
-      console.log('ssss')
       clearInterval(this.myInterval)
     },
     redirect() {
