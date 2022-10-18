@@ -1,5 +1,7 @@
 # my-page
-
+```
+Recomment to use Node version <15.14.0, compatible with node-sass
+```
 ## Project setup
 ```
 npm install
