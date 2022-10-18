@@ -1,56 +1,111 @@
 <template>
-  <b-container>
-      <b-row class="aboutContainer">
-        <b-col class="col-sm-6">
-          <b-img center class="my-img" :src="require('../assets/photo.png')"></b-img>
+  <div>
+    <div class="background-grey">
+      <b-container class="pt-5">
+        <b-row class="py-5 text-center">
+          <b-col>
+            <b-icon
+              icon="emoji-heart-eyes-fill"
+              scale="3"
+              class="rounded-circle item-img"
+              variant="black"
+            ></b-icon>
+            <h3 class="py-4">100 % zadowolonych klientów</h3>
+          </b-col>
+          <b-col>
+            <b-icon
+              icon="tree-fill"
+              scale="3"
+              class="rounded-circle item-img"
+              variant="black"
+            ></b-icon>
+            <h3 class="py-4">> 20 zaprojektowanych ogrodów</h3>
+          </b-col>
+          <b-col>
+            <b-icon
+              icon="clock-fill"
+              scale="3"
+              class="rounded-circle item-img"
+              variant="black"
+            ></b-icon>
+            <h3 class="py-4">> 10 zrealizowanych projektów</h3>
+          </b-col>
+        </b-row>
+      </b-container>
+    </div>
+    <b-container>
+      <b-row align-v="center" class="my-5">
+        <b-col class="py-4 my-4" cols="12" md="6">
+          <b-img fluid :src="require('../assets/koncepcja.png')"></b-img>
         </b-col>
-        <b-col class=" myBorder px-4 py-4 text-center">
-          <h1>Some info about me</h1>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-          <b-button class="myBtn" size="lg">My work</b-button>
+        <b-col cols="12" md="6" class="mobile-view">
+          <h3 class="pt-5 text-center">DLACZEGO <strong>JA?</strong></h3>
+          <h2 class="pt-2">
+            Posiadam doświadczenie, wykształcenie i pełno pomysłów w głowie :-)
+            Decydując się na współpracę ze mną, obiecuję stworzyć Twój ogród
+            marzeń!
+          </h2>
+          <div class="py-4">
+            <b-col>
+              <h2>
+                <b-icon
+                  icon="check-circle-fill"
+                  class="rounded-circle item-img"
+                  variant="black"
+                ></b-icon>
+                funkcjonalność rozwiązań połączona harmonijnym układem roślin
+              </h2>
+            </b-col>
+            <b-col>
+              <h2>
+                <b-icon
+                  icon="check-circle-fill"
+                  class="rounded-circle item-img"
+                  variant="black"
+                ></b-icon>
+                uczciwość, treminowość, skuteczność i elastyczność
+              </h2>
+            </b-col>
+            <b-col>
+              <h2>
+                <b-icon
+                  icon="check-circle-fill"
+                  class="rounded-circle item-img"
+                  variant="black"
+                ></b-icon>
+                dostosowanie do klienta, zarówno w kontekście stylu ogrodu jak i
+                budżetu
+              </h2>
+            </b-col>
+            <b-col>
+              <h2>
+                <b-icon
+                  icon="check-circle-fill"
+                  class="rounded-circle item-img"
+                  variant="black"
+                ></b-icon>
+                najwyższa jakość usług projektowych
+              </h2>
+            </b-col>
+            <div class="text-center">
+              <b-button class="my-5" size="lg" @click="contactClick()"
+                >Skontaktuj się ze mną</b-button
+              >
+            </div>
+          </div>
         </b-col>
       </b-row>
-  </b-container>
+    </b-container>
+  </div>
 </template>
 
-<style lang="scss" scoped>
-@import '../scss/colors.scss';
-
-
-.aboutContainer {
-  align-items: center;
-}
-
-h1 {
-  color: $green;
-  padding: 10px 0;
-}
-
-@media (max-width: 550px) {
-  .my-img {
-  width: 80%;
-}    
-}
-@media (min-width: 550px) and (max-width: 767.98px){
-  .my-img {
-  width: 80%;
-}     
-}
-  
-@media (min-width: 768px) and (max-width: 991.98px){
-  .my-img {
-  width: 90%;
-}     
-}
-@media (min-width: 992px) and (max-width: 1199.98px){
-  .my-img {
-  width: 60%;
-}     
-}
-@media (min-width: 1200px) {    
-.my-img {
-  width: 60%;
-}
-}
-
-</style>
+<script>
+export default {
+  name: "About",
+  methods: {
+    contactClick() {
+      this.$router.push("./contact");
+    },
+  },
+};
+</script>

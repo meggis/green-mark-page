@@ -1,140 +1,124 @@
 <template>
-<div>
-  <b-container fluid class="p-0">
-      <div class="header">
-        <b-img class="logo" :src="require('../assets/logo.png')" fluid alt="Responsive image"></b-img>
-      </div>
-      <div class=" container mt-5">
-        <div class="home-class row px-0 justify-content-center">
-          <div class="col-md-4 col-sm-8 col-10 myBorder py-4">
-              <b-img class="my-img" center :src="require('../assets/check2-circle.svg')" alt="" width="80" height="80"></b-img>
-              <h1 class="my-title">> 20 done garden projects</h1>
-          </div>
-          <div class="col-md-4 col-sm-8 col-10 myBorder py-4">
-              <b-img class="my-img" center :src="require('../assets/emoji-smile.svg')" alt="" width="80" height="80"></b-img>
-              <h1 class="my-title">100% of happy clients</h1>
-          </div>
-          <div class="col-md-4 col-sm-8 col-10 myBorder py-4">
-              <b-img class="my-img" center :src="require('../assets/tree.svg')" alt="" width="80" height="80"></b-img>
-              <h1 class="my-title">> 1 000 planted plants</h1>
-          </div>
-        </div>
-
-        <div class="container my-3">
-          <div class="row justify-content-md-center py-5">
-            <div class="col-md-10 text-center" style="color:#c0c0c0">
-              <h1 class="welcome">Welcome to my portfolio page </h1>
-              <p class="lead py-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-              <b-button class="myBtn" size="lg">My work</b-button>
-            </div>
-          </div>
-        </div>
+  <div>
+    <div class="background-main">
+      <b-container>
+        <b-row align-v="center">
+          <b-col cols="12" md="6">
+            <b-img class="w-100" :src="require('../assets/photo.png')"></b-img>
+          </b-col>
+          <b-col class="mobile-home mb-5" cols="12" md="6">
+            <h1 class="col-header">GREEN-MARK</h1>
+            <h4 class="font-weight-bold">PROJEKTOWANIE OGRODÓW</h4>
+            <p class="heading-text">
+              Stwórz ze mną swoją zieloną oazę, bogatą w bujną i urzekającą
+              roślinność! Pozwól sobie na relaks i oddaj swój ogród w ręce
+              profesjonalisty. Razem zostawmy
+              <span class="green">zielony-ślad</span>.
+            </p>
+          </b-col>
+        </b-row>
+      </b-container>
     </div>
+    <b-container>
+      <b-row class="mobile-home-info my-5 py-5" align-h="around" align-v="center">
+        <b-col cols="12" md="5" class="text-right">
+          <h3>ZA CO <strong>ZAPŁACISZ?</strong></h3>
+          <p class="col-p">
+            Zobacz jak wygląda standardowa zawartość projektu ogrodu, który dla
+            Ciebie wykonam. Każda z pozycji jest dostosowana zarówno do potrzeb
+            jak i budżetu zamawiającego. Wszelkie szczegóły ustalimy na pierwszy
+            <span class="green">bezpłatnym</span> spotkaniu.
+          </p>
+        </b-col>
+        <b-col cols="12" md="6">
+          <b-img
+            class="w-100"
+            right
+            :src="require('../assets/macbook2.png')"
+          ></b-img>
+        </b-col>
+          <b-col class="text-center">
+            <b-button size="lg" class="mt-5" @click="exampleClick()"
+              >Zawartość projektu</b-button
+            >
+          </b-col>
+        </b-row>
     </b-container>
-</div>
+    <div class="background-grey overflow-auto">
+      <b-container>
+        <b-row class="mobile-home-info mt-5 py-5" align-h="around" align-v="center">
+          <b-col cols="12" md="6">
+            <b-img
+              class="w-100"
+              right
+              :src="require('../assets/macbook.png')"
+            ></b-img>
+          </b-col>
+          <b-col cols="12" md="5" class="text-left">
+            <h3>CO ZA TO <strong>OTRZYMASZ?</strong></h3>
+            <p class="col-p">
+              Wszystko zaczyna się od myśli. To one potrafią prowadzić do
+              konkretnych uczuć, uczucia do działań, a działania do rezultatów.
+              W każdym wypadku, rezultatem współpracy z moją osobą jest
+              opracowanie <span class="green">ogrodu marzeń</span>. Zapraszam do
+              zapoznania się z przykładowymi realizacjami ogrodów.
+            </p>
+          </b-col>
+            <b-col class="text-center">
+              <b-button size="lg" class="my-5" @click="projectsClick()"
+                >Zrealizowane projekty</b-button
+              >
+            </b-col>
+          </b-row>
+      </b-container>
+    </div>
+  </div>
 </template>
 
+
 <script>
-// @ is an alias to /src
-
-
 export default {
-
-}
+  name: "Home",
+  methods: {
+    exampleClick() {
+      this.$router.push("../offer");
+    },
+    projectsClick() {
+      this.$router.push("../work");
+    },
+  },
+};
 </script>
 
-<style lang="scss">
-@import '../scss/colors.scss'; 
 
+<style scoped>
 
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: url('../assets/main1.jpg');
-  height: 100%;
-  background-size: cover;
-  padding: 80px;
-  }
-
-.my-title {
-  text-align: center;
-  color: rgb(131, 131, 131);
-  margin-top: 20px;
+.heading-text {
+  font-size: 25px;
   font-weight: lighter;
 }
-.myBorder {
-  border-style: dashed;
-  border-width: medium;
-  color: gray;}
 
-@media (max-width: 550px) {     
-  .home-class .myBorder:not(:first-child) {
-    border-top: 0px;
-  } 
-  .my-title {
-    font-size: 1.4rem;}
-  .logo {
-    width: 40%;
-  }
-  .my-img {
-    width: 6vh;
-  }}
-@media (min-width: 550px) and (max-width: 767.98px){     
-  .home-class .myBorder:not(:first-child) {
-    border-top: 0px;
-  } 
-  .my-title {
-    font-size: 1.7rem;}
-  .logo {
-    width: 40%;
-  }
-  .my-img {
-  width: 6vh;
-  }}
-  
-@media (min-width: 768px) and (max-width: 991.98px){     
-  .home-class .myBorder:not(:last-child) {
-    border-right: 0px;
-  } 
-  .my-title {
-    font-size: 1.4rem;}
-  .logo {
-    width: 50%;
-  }
-  .my-img {
-  width: 5vh;
-  }}
-@media (min-width: 992px) and (max-width: 1199.98px){     
-  .home-class .myBorder:not(:last-child) {
-    border-right: 0px;
-  } 
-  .my-title {
-    font-size: 1.9rem;}
-  .logo {
-    width: 40%;
-  }
-  .my-img {
-  width: 6vh;
-  }}
-@media (min-width: 1200px) {     
-  .home-class .myBorder:not(:last-child) {
-  border-right: 0px;}
-  .my-title {
-    font-size: 2.2rem;}
-  .logo {
-    width: 30%;
-  }}
-
-
-.myBtn {
-  color: white;
-  }
-
-.myBtn:hover:hover {
-  background-color: transparent;
-  border-color: $green;
+.background-main {
+  background: linear-gradient(
+    180deg,
+    rgba(180, 180, 181, 1) 0%,
+    rgba(171, 171, 171, 1) 0%,
+    rgba(242, 242, 242, 1) 100%
+  );
 }
 
+.col-header {
+  font-size: 3.2rem;
+  font-weight: bold;
+}
 
+.col-p {
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .mobile-home {
+    text-align: center;
+  }
+}
 </style>

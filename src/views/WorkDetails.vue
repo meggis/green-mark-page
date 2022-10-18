@@ -1,130 +1,87 @@
 <template>
-  <b-container class="text-center">
-    <b-row>
-      <b-col>
-        <b-card-group v-if="workItem">
-          <b-card no-body>
-            <b-card-text>{{ workItem.title }}</b-card-text>
-            <b-card-text>{{ workItem.localization }}</b-card-text>
-            <b-card-text>{{ workItem.photos }}</b-card-text>
-            <b-container class="md-4">
-              <b-container>
-                <b-row class="mdb-lightbox no-margin">
-                  <b-col md="4" @click.native="showLightbox(0)">
-                    <figure>
-                      <img
-                        src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(117).jpg"
-                        class="img-fluid"
-                        alt=""
-                      />
-                    </figure>
-                  </b-col>
-                  <b-col md="4" @click.native="showLightbox(1)">
-                    <figure>
-                      <img
-                        src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(98).jpg"
-                        class="img-fluid"
-                        alt=""
-                      />
-                    </figure>
-                  </b-col>
-                  <b-col md="4" @click.native="showLightbox(2)">
-                    <figure>
-                      <img
-                        src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(131).jpg"
-                        class="img-fluid"
-                        alt=""
-                      />
-                    </figure>
-                  </b-col>
-                </b-row>
-              </b-container>
-              <b-lightbox
-                :visible="visible"
-                :imgs="imgs"
-                :index="index"
-                @hide="handleHide"
-              ></b-lightbox>
-            </b-container>
-          </b-card>
-        </b-card-group>
-      </b-col>
-    </b-row>
-    <b-row align-v="center">
-      <b-col align-self="center" class="detailsContainer">
-        <b-card-group v-if="!workItem && error">
-          <b-card class="myyyy">
-            <b-card-text class="my-5">
-              <h1>404</h1>
-              <h4>page not found</h4>
-            </b-card-text>
-            <div>
-              <b-button @click="detailClick()">Go to the front page</b-button>
+  <div>
+    <div class="background-grey">
+      <div v-if="workItem && workItem.photos.length">
+        <Carousel :show="show" :slide="slide" :photos="workItem.photos" @hideModal="hideModal" />
+      </div>
+      <b-container>
+        <b-row align-h="center" align-v="center" class="py-5" v-if="workItem">
+          <b-col cols="12" md="5" class="text-center">
+            <h1>{{ workItem.title }}</h1>
+          </b-col>
+          <b-col cols="12" md="6" class="mt-4 text-left">
+            <p class="mx-auto">{{ workItem.descript }}</p>
+            <h6 class="font-weight-bold">
+              Localization: {{ workItem.localization }}
+            </h6>
+          </b-col>
+        </b-row>
+      </b-container>
+    </div>
+    <b-container>
+      <div v-if="workItem && workItem.photos.length">
+        <b-row class="my-4">
+          <b-col v-for="(photo, index) in workItem.photos" :key="index" cols="12" md="6">
+            <div @click="clickItem(index)">
+              <b-img class="w-100 hover-style mb-2" :src="require(`../assets/${photo}`)"></b-img>
             </div>
-          </b-card>
-        </b-card-group>
-      </b-col>
-    </b-row>
-  </b-container>
+          </b-col>
+        </b-row>
+      </div>
+      <div class="text-center">
+        <b-row>
+          <b-col class="mb-5">
+            <b-button @click="anotherProjects()"
+              >Powrót do projektów</b-button>
+          </b-col>
+        </b-row>
+      </div>
+    </b-container>
+  </div>
 </template>
 
 <script>
 import { getSpecificItem } from "@/DATA.js";
+import Carousel from '../shared/Carousel'
 
 export default {
   name: "WorkDetails",
+  components: {
+    Carousel
+  },
   data() {
     return {
       id: this.$route.params.id,
       workItem: null,
       getSpecificItem: getSpecificItem,
-      error: false,
+      show: false,
+      slide: null
     };
   },
   mounted() {
     this.getItem();
-    // pseudocode
-    // getItem(id) => assing to this.item
   },
   methods: {
     getItem() {
       this.workItem = this.getSpecificItem(this.id);
-
-      if (!this.workItem) {
-        this.error = true;
-      }
     },
-    detailClick() {
-      this.$router.push("../");
+    anotherProjects() {
+      this.$router.push("../Work");
     },
-    showLightbox(index) {
-      this.index = index;
-      this.visible = true;
+    clickItem(index) {
+      this.show = true
+      this.slide = index
     },
-    handleHide() {
-      this.visible = false;
+    hideModal() {
+      this.show = false
     },
   },
 };
 </script>
+
 <style scoped>
-.detailsContainer {
-  background: transparent;
-}
-
-@media (min-width: 768px) {
-  .carousel-multi-item-2 .col-md-3 {
-    float: left;
-    width: 25%;
-    max-width: 100%;
-  }
-}
-
-.carousel-multi-item-2 .card img {
-  border-radius: 2px;
-}
-
-figure {
+.hover-style:hover {
+  outline: 1px solid rgb(124, 124, 124);
   cursor: pointer;
 }
 </style>

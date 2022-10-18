@@ -1,88 +1,50 @@
 <template>
-  <div id="app">
-    <nav class="nav justify-content-center sticky-top">        
-      <router-link to="/" class="nav-link">Home</router-link>
-      <router-link to="/about" class="nav-link">About</router-link>
-      <router-link to="/work" class="nav-link">Work</router-link>
-      <router-link to="/contact" class="nav-link">Contact</router-link>
-    </nav>
-    <div class="main-wrapper">
-      <router-view class="main-content"/>
-      <Footer />
+  <div class="page-container">
+    <Header />
+    <div class="content-wrap">
+      <router-view />
+      <div class="footer">
+        <Footer />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import Footer from "./shared/Footer"
+import Footer from "./shared/Footer";
+import Header from "./shared/Header";
 
 export default {
   components: {
-    Footer
+    Footer,
+    Header,
   },
   data() {
-    return {
-      title: "asdasdsada"
-    }
-  }
-}
+    return {};
+  },
+};
 </script>
 
-<style lang="scss">
-@import './scss/colors.scss';
-
-
-.nav {
-  padding: 10px;
-  background: black;
-
-  a {
-    font-size: 1em;
-    text-decoration: none;
-    background-color: transparent;
-    border-bottom: .25rem solid transparent;
-    margin: auto 5px;
-    cursor: pointer;
-    color: #c0c0c0;
-   
-    &:hover {
-     border-bottom-color: $green;
-     color:#c0c0c0;
-    }
-    &:focus {
-      border-bottom-color: $green;
-      color:#c0c0c0;
-    }
-  }
-}
-
-@media (max-width: 380px) {
-  .nav {
-    display: block;
-  }
-}
-
-.main-wrapper {
-  background-color: #333333;
+<style>
+.page-container {
   position: relative;
-  min-height: calc(100vh - 64px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  min-height: 100vh;
 }
 
-.main-content {
-  padding-bottom: 134px;
+.content-wrap {
+  padding-bottom: 56px;
 }
 
-footer {
+@media (max-width: 768px) {
+  .content-wrap {
+    padding-bottom: 104px;
+  }
+} 
+
+.footer {
   position: absolute;
   bottom: 0;
-  height: 134px;
   width: 100%;
-  // z-index: 100;
-  // background-color: #333333;
-  // box-shadow: 0px -1px 21px -8px #909090;
+  background-color: black;
 }
-
 </style>
